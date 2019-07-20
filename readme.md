@@ -16,6 +16,11 @@ In laymen, it connects to the server where the email address exists and *tries* 
 
 Not every server will cooperate but most will. Most notably I've run into issues with `redhat.com`
 
+
+## Contributing 
+
+If there is an issue or you think it needs a new feature, feel free to open an issue or PR. 
+
 ## Example
 
 ```
