@@ -35,7 +35,7 @@ const { validate } = require('email-validator')
         isEmailValid = await validate('youremail@gmail.com')
         
     } catch(e) {
-        // handle error
+        // handle invalid email / error
     }
 
 })()
