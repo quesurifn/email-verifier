@@ -1,5 +1,5 @@
 {
-  "name": "email-verifier",
+  "name": "smtp-email-verifier",
   "version": "1.0.0",
   "description": "An package to interrogate SMTP servers to see if an email exists",
   "main": "src/index.js",
