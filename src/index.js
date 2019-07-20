@@ -2,7 +2,7 @@ const SMTPClient = require('smtp-client').SMTPClient
 const utilities = require('./utils/index')
 
 module.exports = {
-   validateEmail: (email, timeout = 2000, enableConsole = true) => {
+   validate: (email, timeout = 2000, enableConsole = true) => {
         return new Promise(async (resolve, reject) => {
             let servers = null, client = null, result = null;
             
@@ -67,6 +67,7 @@ module.exports = {
                     error_message: false
                 })
             } catch(e) {
+                await client.quit();
                 reject({
                     email,
                     mx_priority_1: servers[0] ? servers[0].exchange : null,

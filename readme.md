@@ -14,11 +14,24 @@ In laymen, it connects to the server where the email address exists and *tries* 
 }
 ```
 
-Not every server will cooperate but most will. 
+Not every server will cooperate but most will. Most notably I've run into issues with `redhat.com`
 
 ## Example
 
 ```
+const { validate } = require('email-validator')
 
+(async ()  => {
 
+    let isEmailValid = null
+
+    try { 
+
+        isEmailValid = await validate('youremail@gmail.com')
+        
+    } catch(e) {
+        // handle error
+    }
+
+})()
 ```
