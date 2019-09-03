@@ -4,7 +4,7 @@ const fakeEmails = require('../constants/fakeEmailConstants')
 const resolver = new Resolver();
 resolver.setServers(['8.8.8.8', '4.4.4.4']);
 
-const validateEmailAddress = emailAddress => {
+const validateEmailAddress = async emailAddress => {
   const splitEmail = emailAddress.split('@')[1];
   if(undefined === splitEmail) throw(new Error("Invalid email format"));
   resolver.resolveMx(splitEmail, (err, mx) => {
