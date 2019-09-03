@@ -22,6 +22,9 @@ module.exports = {
             }
         }
 
+        // Reject
+        if(client === null) throw(new Error(`Could not connect to the SMTP server for address: ${email}`))
+
         await client.mail({from: utilities.randomEmailAddress()}); 
         await client.rcpt({to: email});
         await client.quit();
