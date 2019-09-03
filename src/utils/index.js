@@ -1,16 +1,18 @@
 const { Resolver } = require('dns');
-const fakeEmails = require('../constants/fakeEmailConstants')
+const fakeEmails = require('../constants/index')
 
 const resolver = new Resolver();
 resolver.setServers(['8.8.8.8', '4.4.4.4']);
 
-const validateEmailAddress = async emailAddress => {
-  const splitEmail = emailAddress.split('@')[1];
-  if(undefined === splitEmail) throw(new Error("Invalid email format"));
-  resolver.resolveMx(splitEmail, (err, mx) => {
-    if(err) throw(err);
-    return mx;
-  });
+const validateEmailAddress = emailAddress => {
+  return new Promise((resolve, reject) => {
+    const splitEmail = emailAddress.split('@')[1];
+    if(undefined === splitEmail) throw(new Error("Invalid email format"));
+    resolver.resolveMx(splitEmail, (err, mx) => {
+      if(err) reject(err);
+      resolve(mx);
+    });
+  })
 };
 
 const randomEmailAddress = () => {
