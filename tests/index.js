@@ -1,4 +1,4 @@
-const { validate } = require('../src/index')
+const Validate = require('../src/index')
 
 const ObjectId = (id) => String(id); 
 
@@ -48,10 +48,10 @@ const listOfEmailsToValidate = [
 const passed = [];
 const erred = [];
 
-(async () => {
-    for (const key in listOfEmailsToValidate) {
-       const validated = await validate(listOfEmailsToValidate[key]['email'])
-       console.log(validated)
-    }
-})()
+const validate = new Validate()
 
+{
+    for (const key in listOfEmailsToValidate) {
+        const validated = validate.validate(listOfEmailsToValidate[key]['email']).then((data) => console.log(data))
+     } 
+}
