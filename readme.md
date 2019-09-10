@@ -34,9 +34,9 @@ const { validate } = require('email-validator')
 
     let isEmailValid = null
 
-    try { 
-
-        isEmailValid = await validate('youremail@gmail.com')
+    try {  
+                                        // Verbose and timeout defaults; Mot needed to use the method. 
+        isEmailValid = await validate({email: "kyle@gmail.com", verbose: true, timeout: 2000})
         
     } catch(e) {
 
