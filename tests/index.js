@@ -43,15 +43,8 @@ const listOfEmailsToValidate = [
 { _id : ObjectId("5a60d709151716500c3e8b3c"), email : "michelleang02@gmail.com" },
 { _id : ObjectId("5a60f3ae4cc6ae5051d5ea68"), email : "bungashick1@gmail.com" },
 { _id : ObjectId("5a04c11468507c068293fa3e"), email : "meganbwild@gmail.com" },
+{ _id : ObjectId("5a04c11468507c068293fa3e"), email : "dasdasdasdasdasdfsefd@gmail.com" },
 ];
 
-const passed = [];
-const erred = [];
 
 const validate = new Validate()
-
-{
-    for (const key in listOfEmailsToValidate) {
-        const validated = validate.validate(listOfEmailsToValidate[key]['email']).then((data) => console.log(data))
-     } 
-}
