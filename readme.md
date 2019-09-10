@@ -6,9 +6,16 @@ In laymen, it connects to the server where the email address exists and *tries* 
 ```
 Successful 
 {   
-    email: "kyle@gmail.com,
-    
+    email: "kyle@gmail.com,           
+    mx_priority_1: "gmail-smtp-in.l.google.com",
+    mx_isValid: true
+}
 
+Error
+{
+    email: "kyle@gmail.com"
+    error: <error object>
+}
 ```
 
 Not every server will cooperate but most will. Most notably I've run into issues with `redhat.com`

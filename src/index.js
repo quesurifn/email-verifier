@@ -7,7 +7,8 @@ const Validate = class Validate {
         this.client = null;
     }
 
-    async validate(email, timeout = 2000, verbose = false) {
+    async validate(options) {
+        const {timeout = 1000, email, verbose = false} = options;
         return new Promise(async (resolve, reject) => {
             let servers = null;
             servers = await utilities.validateEmailAddress(email);
