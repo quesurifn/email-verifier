@@ -20,11 +20,6 @@ Error
 
 Not every server will cooperate but most will. Most notably I've run into issues with `redhat.com`
 
-
-## Contributing 
-
-If there is an issue or you think it needs a new feature, feel free to open an issue or PR. 
-
 ## Example
 
 ```
@@ -35,7 +30,7 @@ const { validate } = require('email-validator')
     let isEmailValid = null
 
     try {  
-                                        // Verbose and timeout defaults; Mot needed to use the method. 
+                                // Verbose and timeout defaults; Mot needed to use the method. 
         isEmailValid = await validate({email: "kyle@gmail.com", verbose: true, timeout: 2000})
         
     } catch(e) {
