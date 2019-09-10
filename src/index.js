@@ -12,7 +12,6 @@ const Validate = class Validate {
             let servers = null;
             servers = await utilities.validateEmailAddress(email);
             servers = servers.sort((a,b) => a.priority - b.priority); 
-            console.log(email)
 
             const exchange = servers[0]["exchange"];
             let client = new SMTPClient({
