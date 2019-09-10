@@ -10,7 +10,6 @@ const validateEmailAddress = emailAddress => {
     if(undefined === splitEmail) reject(new Error('Invalid address format'));
     resolver.resolveMx(splitEmail, (err, mx) => {
       if(err) reject(err);
-      console.table(mx)
       resolve(mx);
     });
   })
